@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feed Setting Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Feed Setting Calculator</h1>
+
+        <label for="feed">Enter Feed:</label>
+        <input type="number" id="feed" placeholder="Enter Feed" step="any" />
+
+        <label for="output">Enter Output:</label>
+        <input type="number" id="output" placeholder="Enter Output" step="any" />
+
+        <button onclick="calculateFeedSetting()">Calculate</button>
+
+        <h2 id="result">Feed Setting: </h2>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
