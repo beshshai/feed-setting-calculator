@@ -10,7 +10,7 @@ function calculateFeedSetting() {
     }
 
     // Calculate Feed Setting using the corrected formula
-    const feedSetting = (30.54 - (0.17 * output) / feed) / 0.853;
+    const feedSetting = (30.54 - (0.085 * output) / feed) / 0.853;
 
     // Display the result
     document.getElementById("result").textContent = "Feed Setting: " + feedSetting.toFixed(2);
