@@ -9,8 +9,8 @@ function calculateFeedSetting() {
         return;
     }
 
-    // Calculate Feed Setting using the formula: (23.74 + (139.98 * feed) - (1.52 * output))
-    const feedSetting = (23.74 + (139.98 * feed) - (1.52 * output));
+  // Calculate Feed Setting using the formula: (30.54 - (0.17 * yarnCount / feed)) / 0.853
+const feedSetting = (30.54 - (0.17 * yarnCount / feed)) / 0.853;
 
     // Display the result
     document.getElementById("result").textContent = "Feed Setting: " + feedSetting.toFixed(2);
