@@ -7,20 +7,38 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="image-container">
+        <img src="images/rotor_frame.jpg" alt="Rotor Spinning Frame" />
+    </div>
+    
     <div class="container">
         <h1>Feed Setting Calculator</h1>
-
+        
         <label for="feed">Enter Feed(Ne):</label>
         <input type="number" id="feed" placeholder="Enter Feed" step="0.001" />
-
+        
         <label for="output">Enter Output(Ne):</label>
         <input type="number" id="output" placeholder="Enter Output" step="any" />
-
+        
         <button onclick="calculateFeedSetting()">Calculate</button>
-
+        
         <h2 id="result">Feed Setting: </h2>
     </div>
-
+    
+    <div class="sidebar">
+        <h3>Steps to Follow:</h3>
+        <ul>
+            <li>Ensure all settings are correctly adjusted to default F27 = 25,000 RPM and F24 = 20 TPI.</li>  
+            <li>Enter the required Feed (Ne) and Output (Ne) values in the calculator.</li>
+            <li>Press the "Calculate" button to determine the feed setting.</li>
+            <li>Use the calculated feed setting to configure the microcontroller.</li>
+            <li>Upload the feed setting values to the microcontroller to automate adjustments.</li>
+            <li>Verify the microcontroller is functioning correctly by monitoring output.</li>
+            <li>Adjust F27 and F24  if required based on material and production needs.</li>
+            <li>Accuracy of the calculated feed setting is within ±1 if all defaults are maintained.</li>
+        </ul>
+    </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
