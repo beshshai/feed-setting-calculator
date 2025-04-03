@@ -75,5 +75,21 @@
             <li>Accuracy of the calculated feed setting is within ±1 if all defaults are maintained.</li>
         </ul>
     </div>
+    div>
+    
+    <script>
+        function calculateFeedSetting() {
+            let feed = parseFloat(document.getElementById("feed").value);
+            let output = parseFloat(document.getElementById("output").value);
+            if (isNaN(feed) || isNaN(output)) {
+                document.getElementById("result").innerText = "Please enter valid numbers.";
+                return;
+            }
+            let feedSetting =(30.54 - (0.085 * output/feed))/ 0.853; // Adjust formula as needed
+            document.getElementById("result").innerText = `Feed Setting: ${feedSetting.toFixed(3)}`;
+        }
+    </script>
+</body>
+    
 </body>
 </html>
