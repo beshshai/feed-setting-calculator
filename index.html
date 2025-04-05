@@ -98,8 +98,8 @@
       let deliverySetting = (24*20)/delivery;
 
       // Feed Setting Formula
-      let baseSetting = output * ((0.01714 * Math.pow(deliverySetting, 2) - 0.16829 * deliverySetting + 4.29486));
-      let feedSetting =(36 - (0.1 *(baseSetting / feed)/10.13254)) ;
+      let baseSetting = (output*10.13254) / ((0.01714 * Math.pow(deliverySetting, 2) - 0.16829 * deliverySetting + 4.29486));
+      let feedSetting =(36 - (0.1 *(baseSetting / feed))) ;
 
       // Display results
       document.getElementById("result").innerHTML = `
