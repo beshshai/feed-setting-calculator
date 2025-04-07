@@ -51,8 +51,8 @@
       font-size: 1.2em;
     }
     .advanced-link {
+      display: inline-block;
       margin-top: 20px;
-      display: block;
       text-decoration: none;
       font-weight: bold;
       color: #007bff;
@@ -79,43 +79,10 @@
 
     <h2 id="result">Feed Setting: </h2>
 
-    <!-- 🔧 Advanced Options Link -->
+    <!-- ✅ Advanced Options Link -->
     <a href="beta.html" class="advanced-link">🔧 Advanced Options</a>
   </div>
 
   <div class="sidebar">
     <h3>Steps to Follow:</h3>
     <ul>
-      <li>Ensure all settings are correctly adjusted to default F27 = 25,000 RPM and F24 = 20 TPI.</li>
-      <li>Enter the required Feed (Ne), Output (Ne), and Delivery Setting (TPI) values in the calculator.</li>
-      <li>Press the "Calculate" button to determine the feed and delivery settings.</li>
-      <li>Use the calculated values to configure the microcontroller.</li>
-      <li>Verify the microcontroller is functioning correctly by monitoring output.</li>
-      <li>Adjust F27 and F24 if required based on material and production needs.</li>
-      <li>Accuracy of the calculated feed setting is within ±1 if all defaults are maintained.</li>
-    </ul>
-  </div>
-
-  <script>
-    function calculateFeedSetting() {
-      let feed = parseFloat(document.getElementById("feed").value);
-      let output = parseFloat(document.getElementById("output").value);
-      let delivery = parseFloat(document.getElementById("delivery").value);
-
-      if (isNaN(feed) || isNaN(output) || isNaN(delivery)) {
-        document.getElementById("result").innerText = "Please enter valid numbers in all fields.";
-        return;
-      }
-
-      let deliverySetting = (24 * 20) / delivery;
-      let baseSetting = (output * 10.12854) / ((0.01714 * Math.pow(deliverySetting, 2)) - (0.16829 * deliverySetting) + 4.29486);
-      let feedSetting = 36 - (0.1 * (baseSetting / feed));
-
-      document.getElementById("result").innerHTML = `
-        Feed Setting: ${feedSetting.toFixed(3)}<br>
-        Delivery Setting: ${deliverySetting.toFixed(3)}
-      `;
-    }
-  </script>
-</body>
-</html>
