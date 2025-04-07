@@ -51,11 +51,11 @@
       font-size: 1.2em;
     }
     .advanced-link {
-      display: block;
-      margin-top: 8px;
-      font-weight: bold;
-      text-decoration: none;
+      font-size: 1.1em;
       color: #007bff;
+      text-decoration: none;
+      margin-top: -10px;
+      display: inline-block;
     }
     .advanced-link:hover {
       text-decoration: underline;
@@ -65,7 +65,6 @@
 <body>
   <div class="container">
     <h1>Feed Setting Calculator</h1>
-    <!-- 🔧 Advanced Options link placed right under heading -->
     <a href="beta.html" class="advanced-link">🔧 Advanced Options</a>
 
     <label for="feed">Enter Feed (Ne):</label>
@@ -107,7 +106,7 @@
       }
 
       let deliverySetting = (24 * 20) / delivery;
-      let baseSetting = (output * 10.12854) / ((0.01714 * Math.pow(deliverySetting, 2)) - (0.16829 * deliverySetting) + 4.29486);
+      let baseSetting = (output * 10.12854) / ((0.01714 * Math.pow(deliverySetting, 2) - 0.16829 * deliverySetting + 4.29486));
       let feedSetting = 36 - (0.1 * (baseSetting / feed));
 
       document.getElementById("result").innerHTML = `
