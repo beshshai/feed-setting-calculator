@@ -50,6 +50,16 @@
       margin-top: 15px;
       font-size: 1.2em;
     }
+    .advanced-link {
+      margin-top: 20px;
+      display: block;
+      text-decoration: none;
+      font-weight: bold;
+      color: #007bff;
+    }
+    .advanced-link:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -68,6 +78,9 @@
     <button onclick="calculateFeedSetting()">Calculate</button>
 
     <h2 id="result">Feed Setting: </h2>
+
+    <!-- 🔧 Advanced Options Link -->
+    <a href="beta.html" class="advanced-link">🔧 Advanced Options</a>
   </div>
 
   <div class="sidebar">
@@ -94,14 +107,10 @@
         return;
       }
 
-      // Delivery Setting Formula
-      let deliverySetting = (24*20)/delivery;
+      let deliverySetting = (24 * 20) / delivery;
+      let baseSetting = (output * 10.12854) / ((0.01714 * Math.pow(deliverySetting, 2)) - (0.16829 * deliverySetting) + 4.29486);
+      let feedSetting = 36 - (0.1 * (baseSetting / feed));
 
-      // Feed Setting Formula
-      let baseSetting = (output*10.12854) / ((0.01714 * Math.pow(deliverySetting, 2) - 0.16829 * deliverySetting + 4.29486));
-      let feedSetting =(36 - (0.1 *(baseSetting / feed))) ;
-
-      // Display results
       document.getElementById("result").innerHTML = `
         Feed Setting: ${feedSetting.toFixed(3)}<br>
         Delivery Setting: ${deliverySetting.toFixed(3)}
